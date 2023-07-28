@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>30DaysOfScript:Internal Script</title>
+  <!-- <script src="./countries.js"></script>
+  <script src="./web_techs.js"></script> -->
+  <script>
+    function callback_include(country) {
+      return country.includes('land')
+    }
+    const countries = ['Finland', 'Estonia', 'Sweden', 'Norway', 'Iceland']
+    const countriesWithLand = countries.filter(callback_include)
+    console.log(countriesWithLand) // ["Finland", "Iceland"]
+
+  </script>
+</head>
+
+<body></body>
+
+</html>
