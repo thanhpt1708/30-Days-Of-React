@@ -10,14 +10,14 @@ const hexaColor = () => {
     color += str[index];
   }
   return "#" + color;
-};
+}
 const generateArray = (length, generatorFunction) => {
   let array = [];
   for (let i = 0; i < length; i++) {
     array.push(generatorFunction());
   }
   return array;
-};
+}
 
 const numArray = Array.from(Array(32).keys());
 const colorArray = generateArray(32, hexaColor);
@@ -26,11 +26,11 @@ const isPrime = (num) => {
     if (num % i === 0) return false;
   }
   return num > 1;
-};
+}
 const isOdd = (num) => {
   if (num % 2 === 0) return false;
   return true;
-};
+}
 
 const GridItem = ({ value, backgroundColor }) => {
   return (
@@ -65,12 +65,12 @@ const gridItemColor = (value) => {
 const gridContainer = {
   display: "grid",
   gridTemplateColumns: "repeat(8, auto)",
-};
+}
 
 const Numbers = ({ numbers }) => {
   const numberList = numbers.map((number) => <GridItem value={number} backgroundColor={gridItemColor(number)} />);
   return <div style={gridContainer}>{numberList}</div>;
-};
+}
 
 const Colors = ({ colors }) => {
   const colorList = colors.map((color) => <GridItem value={color} backgroundColor={color} />)
@@ -83,6 +83,8 @@ const App = () => (
     <Numbers numbers={numArray} />
     <h1 style={{ textAlign: "center" }}>Hexadecimal Colors</h1>
     <Colors colors={colorArray} />
+    <h1 style={{ textAlign: "center" }}>World population</h1>
+    <canvas id="myChart" style={{ width: '100%', maxWidth: '700px' }}></canvas>
   </div>
 );
 
